@@ -32,7 +32,7 @@ export default function Home({ allStories }) {
         <div className="row align-items-center align-content-center">
           <div className="col-md-6 mt-5 mt-md-0">
             <div className="text-center">
-              <img src="/home.png" alt="Home" className="mw-100" />
+              <Image src="/home.png" alt="Home" height="350px" width="450px" />
             </div>
           </div>
           <div className="col-md-6 mt-5 mt-md-0 order-md-first">
