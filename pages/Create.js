@@ -3,7 +3,6 @@ import { storage, firestore } from "../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { getDownloadURL, uploadBytesResumable, ref } from "firebase/storage";
 import { v4 as uuidv4 } from 'uuid';
-import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 
 export default function Create({ user }) {
@@ -11,8 +10,6 @@ export default function Create({ user }) {
     const [body, setBody] = useState("")
     const [image, setImage] = useState(null)
     const [url, setUrl] = useState("")
-
-    const router = useRouter()
 
     useEffect(() => {
         if (url) {
@@ -33,10 +30,6 @@ export default function Create({ user }) {
                     draggable: true,
                     progress: undefined,
                 });
-
-                setTimeout(function () {
-                    router.push('/')
-                }, 1800)
 
             } catch (error) {
                 toast.error(error.message, {
