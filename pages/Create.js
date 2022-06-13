@@ -102,10 +102,6 @@ export default function Create({ user }) {
             })
     }
 
-    if (!user) {
-        router.push('/Login')
-    }
-
     return (
         <>
             {user ?
