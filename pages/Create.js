@@ -50,7 +50,7 @@ export default function Create({ user }) {
                 });
             }
         }
-    }, [url])
+    })
 
     const storageRef = ref(storage, `image/${uuidv4()}`)
 
