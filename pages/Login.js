@@ -17,7 +17,7 @@ export default function Login({ user }) {
     try {
       const { user } = await signInWithEmailAndPassword(auth, email, password)
 
-      toast.success(`Welcome Back! ${user.displayName}`, {
+      toast.success(`Welcome Back ${user.displayName}!`, {
         position: "top-center",
         autoClose: 1800,
         hideProgressBar: false,
