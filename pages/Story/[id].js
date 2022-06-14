@@ -4,6 +4,7 @@ import { firestore } from "../../firebase";
 import { getDoc, doc, collection, addDoc, getDocs, updateDoc, deleteDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
 import { toast } from 'react-toastify';
+import { FaTrashAlt } from "react-icons/fa"
 
 export default function Story({ story, user, comments }) {
     const [comment, setComment] = useState("")
@@ -39,6 +40,37 @@ export default function Story({ story, user, comments }) {
         }, 1000)
 
     }
+    
+    const deleteStory = async (id) => {
+        {/* 
+        
+        await deleteDoc(doc(firestore, "stories", id))
+        setTimeout(() => {
+            toast.success('Story Has Been Deleted!', {
+                position: "top-center",
+                autoClose: 1800,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+
+            router.push('/')
+        }, 500);
+        
+        */}
+        
+        toast.info('Only Admins are able to Delete!', {
+            position: "top-center",
+            autoClose: 1800,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
 
     return (
         <>
@@ -53,9 +85,8 @@ export default function Story({ story, user, comments }) {
                     <h4 className="lead text-primary fw-bold my-5">Written By {story.postedBy} </h4>
                     <p className="lead">{story.body}</p>
 
-                    <div className="d-flex gap-3 justify-content-center py-5">
-                        <button className="btn btn-secondary lead fw-bold text-decoration-none text-white">Edit</button>
-                        <button className="btn btn-danger lead fw-bold text-white text-decoration-none">Delete</button>
+                    <div className="justify-content-center py-5">
+                        <button className="btn btn-danger lead fw-bold text-white text-decoration-none" onClick={() => deleteStory(id)}><FaTrashAlt className="mb-1 mx-1" />Delete</button>
                     </div>
 
                     <form className="row justify-content-center">
