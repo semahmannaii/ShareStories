@@ -61,7 +61,7 @@ export default function Story({ story, user, comments }) {
         
         */}
         
-        toast.info('Only Admins are able to Delete!', {
+        toast.warning('Permission Denied!', {
             position: "top-center",
             autoClose: 1800,
             hideProgressBar: false,
@@ -70,6 +70,19 @@ export default function Story({ story, user, comments }) {
             draggable: true,
             progress: undefined,
         });
+        
+        setTimeout(() => {
+            toast.info('Only Admins are able to Delete!', {
+            position: "top-center",
+            autoClose: 1800,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        }, 1000);
+        
     }
 
     return (
