@@ -63,7 +63,7 @@ export default function Story({ story, user, comments }) {
         
         toast.warning('Permission Denied!', {
             position: "top-center",
-            autoClose: 1800,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -74,7 +74,7 @@ export default function Story({ story, user, comments }) {
         setTimeout(() => {
             toast.info('Only Admins are able to Delete!', {
             position: "top-center",
-            autoClose: 1800,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
