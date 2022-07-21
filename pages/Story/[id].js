@@ -59,7 +59,7 @@ export default function Story({ story, user, comments }) {
             router.push('/')
         }, 500);
         
-        
+        {/*
         
         toast.warning('Permission Denied!', {
             position: "top-center",
@@ -82,6 +82,8 @@ export default function Story({ story, user, comments }) {
             progress: undefined,
         });
         }, 1000);
+        
+        */}
         
     }
 
