@@ -42,7 +42,7 @@ export default function Story({ story, user, comments }) {
     }
     
     const deleteStory = async (id) => {
-        {/* 
+        
         
         await deleteDoc(doc(firestore, "stories", id))
         setTimeout(() => {
@@ -59,7 +59,7 @@ export default function Story({ story, user, comments }) {
             router.push('/')
         }, 500);
         
-        */}
+        
         
         toast.warning('Permission Denied!', {
             position: "top-center",
