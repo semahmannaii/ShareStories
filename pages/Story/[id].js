@@ -43,7 +43,7 @@ export default function Story({ story, user, comments }) {
     
     const deleteStory = async (id) => {
         
-        
+        {/*
         await deleteDoc(doc(firestore, "stories", id))
         setTimeout(() => {
             toast.success('Story Has Been Deleted!', {
@@ -58,7 +58,29 @@ export default function Story({ story, user, comments }) {
 
             router.push('/')
         }, 500);
+        */}
         
+         toast.warning('Permission Denied!', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        
+        setTimeout(() => {
+            toast.info('Only Admins are able to Delete!', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        }, 1000);
         
         
     }
